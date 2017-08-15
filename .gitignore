@@ -11,7 +11,7 @@ pysts/kerasts/*.swp
 pysts/kerasts/*.swo
 pysts/kerasts/__pycache__/*
 
-/data/question-pairs*
+/data/question-pairs-dataset/
 /data/data_*
 /data/glove.6B.*d.txt
 
