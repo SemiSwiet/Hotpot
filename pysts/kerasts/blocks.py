@@ -74,10 +74,11 @@ def embedding(inputs, glove, vocab, s0pad, s1pad, dropout_e, dropout_w,
                 input3 = (name='f%d'%(m,), shape=(p, nlp.flagsdim))
     ''' 
     emb = vocab.embmatrix(glove)
-    # emb = Embedding(input_dim=emb.shape[0], input_length=s1pad, output_dim=glove.N,
-    #                 mask_zero=True, weights=[emb], trainable=trainable, name='emb') # TODO weights?
     emb = Embedding(input_dim=emb.shape[0], input_length=s1pad, output_dim=glove.N,
-                    mask_zero=False, weights=[emb], trainable=trainable, name='emb') # TODO weights?
+                    mask_zero=True, weights=[emb], trainable=trainable, name='emb') # TODO weights?
+    # emb = Embedding(input_dim=emb.shape[0], input_length=s1pad, output_dim=glove.N,
+    #                 mask_zero=False, weights=[emb], trainable=trainable, name='emb') 
+    # for models that does not support masking. like cnn.
 
     dropout1 = Dropout(dropout_w, name='embdrop_w')
     e0_0 = dropout1(emb(inputs[0])) # si0
