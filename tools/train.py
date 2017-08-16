@@ -120,7 +120,6 @@ def train_and_eval(runid, module_prep_model, task, conf, do_eval=True):
     model = task.build_model(module_prep_model)
     plot_model(model, to_file='model.png')
     
-#    model.load_weights('weights/weights-para-gran--62dd2e4660e3be3a-bestval.h5')
     train_model(runid, model, task, conf)
 
     if do_eval:

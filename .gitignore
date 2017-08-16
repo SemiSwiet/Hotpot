@@ -21,3 +21,4 @@ nohup.out
 /outs/*
 /weights/*
 /*-res.pickle
+/scripts/*
